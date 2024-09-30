@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: Wasi_Tech,
+	default: Dak_Tech,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
