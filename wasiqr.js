@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			Qr_Code_By_DAK_Tech.ev.on('creds.update', saveCreds)
-			Qr_Code_By_DAK_Tech.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Drk_Developer.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Drk_Developer.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id, { text: '' + b64data });
+				   let session = await Qr_Code_By_Drk_Developer.sendMessage(Qr_Code_By_Drk_Developer.user.id, { text: '' + b64data });
 	
 				   let DAK_MD_TEXT = `
 *_Session Connected By DRK ALPHA KING _*
@@ -78,7 +78,7 @@ ______________________________________
 _____________________________________
 	
 _Don't Forget To Give Star To My Repo_`
-	 await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id,{text:WASI_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Drk_Developer.sendMessage(Qr_Code_By_Drk_Developer.user.id,{text:DAK_MD_TEXT},{quoted:session})
 
 
 
@@ -87,7 +87,7 @@ _Don't Forget To Give Star To My Repo_`
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					WASI_MD_QR_CODE();
+					DAK_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -100,6 +100,6 @@ _Don't Forget To Give Star To My Repo_`
 			await removeFile("temp/" + id);
 		}
 	}
-	return await WASI_MD_QR_CODE()
+	return await DAK_MD_QR_CODE()
 });
 module.exports = router
