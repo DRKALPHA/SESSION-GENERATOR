@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_DAK_Tech = Wasi_Tech({
+			let Qr_Code_By_DRK_Developer = Drk_Developer({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -58,7 +58,7 @@ router.get('/', async (req, res) => {
 				   let b64data = Buffer.from(data).toString('base64');
 				   let session = await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id, { text: '' + b64data });
 	
-				   let WASI_MD_TEXT = `
+				   let DAK_MD_TEXT = `
 *_Session Connected By DRK ALPHA KING _*
 *_Made With 🤍_*
 ______________________________________
